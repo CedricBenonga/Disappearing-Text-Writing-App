@@ -173,7 +173,10 @@ def disappear(count):
 
 timer = window.after(0, disappear, 0)
 
-label = Label(text="Keep typing and do not stop for 5 seconds!", bg=BG_COLOR)
+title = Label(text="5 seconds disappearing text App!", font=("Ariel", 20, "bold"), bg=BG_COLOR)
+title.grid(row=1, column=0, padx=200, pady=10)
+
+label = Label(text="Don't be inactive for 5 seconds!", font=("Ariel", 15, "bold"), bg=BG_COLOR)
 label.grid(row=2, column=0, padx=200, pady=10)
 
 typing_box = Text(height=10, width=50)
