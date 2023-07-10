@@ -169,23 +169,13 @@ def disappear(count):
         # Tell the user what happened.
         label.config(text="Oops! You're thinking too much!")
 
-        # Give the user option to retry/restart from scratch and disregard their previous progres
+        # Give the user an option to retry/restart from scratch and disregard their previous progres
         star_button.config(text="Retry")
         star_button.grid(column=0, row=4, padx=400)
         typing_box.delete("1.0", END)
 
         # Add some placeholder text
         typing_box.insert(END, placeholder_text)
-
-        # text_length = int(len(typing_box.get("1.0", END)))
-        # 
-        # if text_length == 33:
-        #     typing_box.config(insertontime=0)
-        #
-        # if text_length != 33:
-        #     # typing_box.focus_set()
-        #     typing_box.config(insertontime=1)
-
         typing_box.bind("<Button-1>", lambda event: typing_box.delete("1.0", END))
 
     timer = window.after(1000, disappear, count - 1)
@@ -203,8 +193,6 @@ typing_box = Text(height=10, width=50)
 placeholder_text = "You only have 5 second to think."
 typing_box.insert(END, placeholder_text)
 typing_box.bind("<Button-1>", lambda event: typing_box.delete("1.0", END))
-
-
 typing_box.grid_forget()
 
 star_button = Button(text='Start', command=blurry)
